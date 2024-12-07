@@ -1,0 +1,16 @@
+header{
+    background-color: purple;
+}
+nav, a, ul{
+    list-style-type: none;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+.head1, li{
+    padding-left: 10px;
+}
