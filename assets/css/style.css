@@ -48,3 +48,6 @@ span{
     color: purple;
     font-weight: bold;
 }
+abbr, time {
+    color: green;
+  }
