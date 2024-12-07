@@ -32,3 +32,14 @@ dt{
 dl{
     color: white;
 }
+.head{
+    color: black;
+}
+ul{
+    border: 2px solid orange;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ol{
+    border: 2px solid purple;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
