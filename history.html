@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+</head>
+<body> 
+    <input type="button" value="Back" onclick="goBack()">
+    <input type="button" value="Previous" onclick="previous()">
+    <input type="button" value="Next" onclick="next()">
+    <script>
+        function goBack() {
+          window.history.go()
+        }
+        function previous(){
+            window.history.back()
+        }
+        function next(){
+            window.history.forward()
+        }
+    </script>
+</body>
+</html>
