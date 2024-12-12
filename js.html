@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello World</h2>
+    <script>
+        alert("Hello");
+    </script>
+    <canvas width="120" height="120">
+        An alternative text describing what your canvas displays.
+    </canvas>
+    <audio controls src="assets/audio/cat.mp3">Sound</audio>
+    <video src="assets/video/video.mp4" width="500" controls>Video</video>
+    <div draggable="true">Drag</div>
+    <img src="assets/img/blue/blue-whale.jpg" alt="" draggable="true">
+    <script>
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "green";
+        ctx.fillRect(10,10,100,100);
+
+        addEventListener("drag", (event) => {});
+        ondrag = (event) => {};
+
+        const source = document.getElementById("draggable");
+        source.addEventListener("dragstart", (event) => {
+            event.target.classList.add("dragging");
+        });
+
+        addEventListener("dragend", (event) => {});
+        ondragend = (event) => {
+            event.target.classList.remove("dragging");
+        };
+    </script>
+</body>
+</html>
