@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Element Example</title>
+</head>
+<body>
+
+    <h1>Custom Elements Example</h1>
+    <greeting-card name="Anu" message="Have a great day!"></greeting-card>
+
+    <script>
+        // Define the custom element class
+        class GreetingCard extends HTMLElement {
+            // Constructor for the custom element
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' }); // Use shadow DOM for encapsulation
+            }
+
+            // Called when the element is added to the DOM
+            connectedCallback() {
+                // Get attributes 'name' and 'message' from the custom element
+                const name = this.getAttribute('name') || 'Guest';
+                const message = this.getAttribute('message') || 'Hello there!';
+
+                // Render content inside the shadow DOM
+                this.shadowRoot.innerHTML = `
+                    
+                    <div>
+                        <h2>Hello, ${name}!</h2>
+                        <p>${message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Register the custom element
+        customElements.define('greeting-card', GreetingCard);
+    </script>
+
+</body>
+</html>
