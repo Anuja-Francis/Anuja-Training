@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker Example</title>
+</head>
+<body>
+    <h1>Web Worker Example</h1>
+    
+    <button id="startWorker">Start Computation</button>
+    <p>Result: <span id="result"></span></p>
+    
+    <script>
+        const startButton = document.getElementById("startWorker");
+        const resultDisplay = document.getElementById("result");
+        
+        if (window.Worker) {
+            const worker = new Worker("assets/js/worker.js");
+
+            startButton.addEventListener("click", () => {
+                worker.postMessage("start");
+                resultDisplay.textContent = "Working...";
+            });
+
+            worker.onmessage = (event) => {
+                resultDisplay.textContent = event.data; 
+            };
+
+            worker.onerror = (error) => {
+                console.error("Worker error: ", error);
+                resultDisplay.textContent = "Error occurred in worker.";
+            };
+        } else {
+            alert("Your browser does not support Web Workers.");
+        }
+    </script>
+</body>
+</html>
