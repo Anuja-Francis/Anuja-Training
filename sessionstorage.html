@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SessionStorage</title>
+</head>
+<body>
+    <h1>Session Storage</h1>
+    <input type="text" id="ageInput" placeholder="Enter your age">
+    <button onclick="saveAge()">Save Age</button>
+    <p>Saved Age: <span id="savedAge"></span></p>
+
+    <script>
+        function saveAge() {
+            const age = document.getElementById('ageInput').value;
+            sessionStorage.setItem('age', age);
+            displaySavedAge();
+        }
+
+        function displaySavedAge() {
+            const savedAge = sessionStorage.getItem('age'); 
+            if (savedAge) {
+                document.getElementById('savedAge').textContent = savedAge;
+            }
+        }
+
+        window.onload = displaySavedAge;
+    </script>
+</body>
+</html>
