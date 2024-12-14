@@ -13,16 +13,32 @@
     li li {
         list-style-type: circle;
     }
+    div{
+        color: red;
+    }
+    div > span{
+        color: rgb(214, 28, 106);
+    }
+    p ~ span{
+        color: red;
+    }
+    img + p{
+        color: red;
+    }
 </style>
 <body>
     <ul>
         <li>
-            <div>Fruits</div>
+            <div>Fruits <span>Names</span></div>
             <ul>
                 <li>Apple</li>
                 <li>Orange</li>
             </ul>     
         </li>
     </ul>
+    <p>In the following example, the subsequent-sibling combinator (~) helps to select and style paragraphs that are both siblings of an image and appear after any image.</p>
+    <span>subsequent-sibling combinator (~)</span><br>
+    <img src="assets/img/blue/blue-whale.jpg" alt="">
+    <p>Immediate paragraph after image.</p>
 </body>
 </html>
