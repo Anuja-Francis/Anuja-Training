@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box model</title>
+</head>
+<style>
+    body {
+        font: 1.2em / 1.5 sans-serif;
+    }
+    .box span{
+        border: 5px solid rgb(11, 10, 12);
+        background-color: pink;
+        padding: 1em;
+        margin-top: 20px;
+        margin-right: 1em;
+        margin-bottom: 40px;
+        margin-left: 2em;
+    }
+
+    .alternate {
+        box-sizing: border-box;
+    }
+</style>
+<body>
+    <div class="box">
+        <p>I use the standard box model. I use the <span>standard box model.</span> I use the standard box model.</p>
+    </div>
+</body>
+</html>
