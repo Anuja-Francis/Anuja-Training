@@ -1,0 +1,43 @@
+body{
+    font-family: cursive;
+}
+.parent{
+    border-top: #a66 solid 5px;
+    border-bottom: #a66 solid 5px;
+    display: flex;
+    justify-content: center;
+}
+.main{
+    display: flex;
+    column-count: 3;
+}
+.col1{
+    flex: 2;
+}
+.col2{
+    flex: 1;
+    margin-left: 70px;
+}
+.col3{
+    flex: 1;
+}
+.col2 ul{
+    list-style-type: square;
+}
+.col3 a{
+    column-width: 400px;
+    text-decoration: none;
+}
+.col3 li{
+    list-style-type: none;
+    border: rgb(20, 19, 19) solid 1px;
+    padding: 5px;
+    text-align: center;
+    margin: 0px 19px 16px 114px;
+}
+footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+    display: flex;
+    justify-content: center;
+}
