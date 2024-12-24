@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="sum"></div>
+    <div id="sub"></div>
+    <div id="mul"></div>
+    <div id="evenOdd"></div>
+
+    <script>
+        let num1 = 5;
+        let num2 = 10;
+        let num3 = 2;
+        let num4 = 3;
+
+        let sum = num1 + num2;
+        let sub = num4 - num3;
+        let finalResult = sum * sub;
+        let evenOddResult;
+
+        document.getElementById("sum").innerText = "Addition = " + sum;
+        document.getElementById("sub").innerText = "Subtraction = " + sub;
+        document.getElementById("mul").innerText = "Multiplication = " + finalResult;
+
+        if (finalResult % 2 == 0) {
+            evenOddResult = "0";
+        } else {
+            evenOddResult = "1";
+        }
+
+        document.getElementById("evenOdd").innerText = "Even or Odd = " + evenOddResult;
+    </script>
+</body>
+</html>
