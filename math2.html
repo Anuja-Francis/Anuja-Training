@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="section"></section>
+    
+    <script>
+        let result = 7 + 13 / 9 + 7;
+        let result2 = 100 / 2 * 6;
+
+        const section = document.getElementById('section');
+
+        const para1 = document.createElement('p');
+        para1.textContent = `Your result is ${result.toFixed(2)}`; 
+
+        const para2 = document.createElement('p');
+        const finalNumber = result2; 
+        const finalNumberCheck = typeof finalNumber === 'number' ? 'finalNumber is a number type. Well done!' : 'Ooops! finalNumber is not a number.';
+        para2.textContent = finalNumberCheck;
+
+        section.appendChild(para1);
+        section.appendChild(para2);
+    </script>
+</body>
+</html>
