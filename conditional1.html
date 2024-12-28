@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditinal 1</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+        let season = "winter";
+        let response  = document.querySelector("p");
+        if(season == "summer"){
+            response.textContent = "It's summer! Enjoy the sunshine!";
+        }
+        else if(season == "winter"){
+            response.textContent = "It's winter! Stay warm and cozy!";
+        }
+        else{
+            response.textContent = "We're not sure what season it is right now.";
+        }
+    </script>
+</body>
+</html>
