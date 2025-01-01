@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop 2</title>
+</head>
+<body>
+    <p id="para"></p>
+
+    <script>
+        const name = "Alice";  
+        const para = document.getElementById("para");
+
+        const phonebook = [
+            { name: "Bob", phone: "9876543210" },
+            { name: "Alice", phone: "8765432109" },
+            { name: "Charlie", phone: "7654321098" }
+        ];
+
+        let found = false;
+
+        phonebook.forEach(entry => {
+            if (entry.name == name && !found) {
+                para.textContent = `Name: ${entry.name}, Phone: ${entry.phone}`;
+                found = true;  
+            }
+        });
+
+        if (!found) {
+            para.textContent = "Name not found.";
+        }
+    </script>
+</body>
+</html>

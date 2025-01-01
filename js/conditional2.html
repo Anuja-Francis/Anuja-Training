@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional 2</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+        let machineActive = true;
+        let response = document.querySelector("p");
+        let score = 85;
+
+        if(machineActive == true){
+            response.textContent = "Machine is Active";
+            if (score < 0 || score > 100) {
+                response.textContent = "This is not possible, an error has occurred.";
+            } else if (score >= 0 && score <= 19) {
+                response.textContent = "That was a terrible score — total fail!";
+            } else if (score >= 20 && score <= 39) {
+                response.textContent = "You know some things, but it's a pretty bad score. Needs improvement.";
+            } else if (score >= 40 && score <= 69) {
+                response.textContent = "You did a passable job, not bad!";
+            } else if (score >= 70 && score <= 89) {
+                response.textContent = "That's a great score, you really know your stuff.";
+            } else if (score >= 90 && score <= 100) {
+                response.textContent = "What an amazing score! Did you cheat? Are you for real?";
+            }
+        }
+        else{
+            response.textContent = "switch the machine on";
+        }
+
+    </script>
+</body>
+</html>

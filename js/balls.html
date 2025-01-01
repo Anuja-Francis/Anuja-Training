@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <canvas></canvas>
+
+    <script>
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext("2d");
+
+        const width = (canvas.width = window.innerWidth);
+        const height = (canvas.height = window.innerHeight);
+
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function randomRGB() {
+            return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
+        }
+
+        class Ball {
+            constructor(x, y, radius, dx, dy, color) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.dx = dx;
+                this.dy = dy;
+                this.color = color;
+            }
+
+            update() {
+                if (this.x + this.radius > width || this.x - this.radius < 0) {
+                    this.dx = -this.dx;
+                }
+
+                if (this.y + this.radius > height || this.y - this.radius < 0) {
+                    this.dy = -this.dy;
+                }
+
+                this.x += this.dx;
+                this.y += this.dy;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+
+        const balls = [];
+
+        for (let i = 0; i < 50; i++) {
+            const radius = random(10, 30);
+            const x = random(radius, width - radius);
+            const y = random(radius, height - radius);
+            const dx = random(2, 5) * (Math.random() > 0.5 ? 1 : -1);
+            const dy = random(2, 5) * (Math.random() > 0.5 ? 1 : -1);
+            const color = randomRGB();
+            balls.push(new Ball(x, y, radius, dx, dy, color));
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height); 
+            balls.forEach(ball => {
+                ball.update();
+                ball.draw();
+            });
+
+            requestAnimationFrame(animate); 
+        }
+
+        animate(); 
+    </script>
+</body>
+</html>

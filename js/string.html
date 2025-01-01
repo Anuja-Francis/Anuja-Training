@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const browserType = "mozilla";
+
+        if (browserType.endsWith("zilla")) {
+            console.log("Found zilla at end.");
+        } else {
+            console.log("zilla not at end.");
+        }
+
+        const browserTyp = "mozilla";
+
+        if (browserTyp.startsWith("mo")) {
+            console.log("Found mo at start.");
+        } else {
+            console.log("mo not at start.");
+        }
+
+        console.log(browserType.slice(1, 4));
+        console.log(browserType.slice(2));
+
+        const tagline = "MDN - Resources for developers, by developers";
+        console.log(tagline.indexOf("developers"));
+
+
+        const firstOccurance = tagline.indexOf("developers");
+        const secondOccurance = tagline.indexOf("developers", firstOccurance+1);
+
+        console.log("first occurance at ", firstOccurance);
+        console.log("second occurance at ", secondOccurance);
+
+        const name = "My name is Anuja.";
+        console.log(name.toLowerCase());
+        console.log(name.toUpperCase());
+
+        const updated = name.replace("Anuja", "Anu");
+        console.log(updated);
+        console.log(name);
+
+        let quote = "to be or not to be."
+        console.log(quote);
+        quote = quote.replaceAll("be", "code");
+        console.log(quote);
+
+        const months = ['Jan', 'March', 'April', 'June'];
+        months.splice(1, 0, 'Feb');
+        
+    </script>
+</body>
+</html>

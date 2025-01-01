@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop 1</title>
+</head>
+<body>
+    <ul id="myList"></ul>
+
+    <script>
+        const myArray = ['apple','orange','grapes'];
+        const list = document.getElementById("myList");
+
+        for (let i = 0; i < myArray.length; i++){
+            const listItem = document.createElement("li");
+            listItem.textContent = myArray[i];
+            list.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hi <span id="para"></span>, Welcome to Aspire Systems.</p>
+    <script>
+        const names = ["Anu","Manu","Anju"];
+        const para = document.getElementById('para');
+        const min = 0;
+        const max = 2;
+
+        function random(min,max){
+            randomNum = Math.random()
+        }
+        function chooseName(){
+            const randomIndex = Math.floor(randomNum * names.length);
+            para.textContent = names[randomIndex];
+        }
+        random(min,max);
+        chooseName();
+    </script>
+</body>
+</html>

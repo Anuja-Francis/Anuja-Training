@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hi <span id="para"></span>, Welcome to Aspire Systems.</p>
+    <script>
+        const names = ["Anu","Anjitha","Manu","Anju"];
+        const para = document.getElementById('para');
+        function isShort(){
+            return names.length<6;
+        }
+        const shortNames = names.filter(isShort);
+        para.textContent = shortNames;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop 3</title>
+</head>
+<body>
+    <p id="para"></p>
+
+    <script>
+        const para = document.getElementById("para");
+
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) return false;
+            }
+            return true;
+        }
+
+        let i = 500;
+        let primes = []; 
+
+        while (i >= 2) {
+            if (isPrime(i)) {
+                primes.push(i); 
+            }
+            i--; 
+        }
+
+        para.textContent = primes.join(", ");
+    </script>
+</body>
+</html>

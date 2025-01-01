@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditinal 3</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+        let machineActive = true;
+        let pwd = "cheese";
+        let machineResult;
+        let pwdResult;
+
+        machineResult = machineActive ? "Machine is on" : "Machine is off";
+        pwdResult = machineActive && pwd == "cheese" ? "Login successful" : (machineActive ? "Login failed" : "");
+
+        document.querySelector("p").textContent = `${machineResult} - ${pwdResult}`;
+    </script>
+</body>
+</html>
