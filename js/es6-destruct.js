@@ -5,6 +5,10 @@ console.log(b);
 [a, b, ...rest] = [10,20,30,40,50];
 console.log(rest);
 
+// spread
+let c = [1,2,3];
+let d = [...c,4,5];
+console.log(d);
 
 // Array destructuring
 const foo = ["one","two"];
