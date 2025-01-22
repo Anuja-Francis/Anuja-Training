@@ -9,6 +9,8 @@ import { Parent } from './lifting.jsx';
 import App1 from './id.jsx';
 import Loading from './loading.jsx';
 import Context from './context.jsx';
+import ErrorBoundary from './error-boundary.jsx';
+// import FaultyComponent from './error.jsx';
 //import logo from './logo.svg';
 
 const MarkdownPreview = lazy(() => delayForDemo(import('./MarkdownPreview.jsx')));
@@ -43,6 +45,8 @@ export function MyButton() {
       <App1/>
       <MarkdownEditor/>
       <Context/>
+      <ErrorBoundary/>
+      {/* <FaultyComponent/> */}
     </div>
   );
 }

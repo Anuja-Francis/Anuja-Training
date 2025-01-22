@@ -178,3 +178,7 @@ function oddnum(){
 
     console.log(abc.filter(num => num % 2 !== 0) .reduce((sum, num) => sum + num, 0));
 }
+
+async function factorial() {
+    
+}

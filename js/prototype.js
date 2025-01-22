@@ -13,3 +13,6 @@ const person = {
   employee.greet();
   employee.greet.call(objName);
   console.log(employee.job); 
+  
+  import {a} from "./module.js";
+  console.log(a);
