@@ -9,7 +9,9 @@ import { Parent } from './lifting.jsx';
 import App1 from './id.jsx';
 import Loading from './loading.jsx';
 import Context from './context.jsx';
-import ErrorBoundary from './error-boundary.jsx';
+import FragmentDemo from './fragments.jsx';
+import PortalDemo from './portaldemo.jsx';
+// import ErrorBoundary from './error-boundary.jsx';
 // import FaultyComponent from './error.jsx';
 //import logo from './logo.svg';
 
@@ -45,7 +47,9 @@ export function MyButton() {
       <App1/>
       <MarkdownEditor/>
       <Context/>
-      <ErrorBoundary/>
+      <FragmentDemo/>
+      <PortalDemo/>
+      {/* <ErrorBoundary/> */}
       {/* <FaultyComponent/> */}
     </div>
   );
