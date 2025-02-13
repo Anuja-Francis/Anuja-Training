@@ -1,0 +1,57 @@
+** 1. AGGREGATION **
+
+db.sales.insertMany([{_id:1,product:"Laptop",price:50000,quantity:3,date:2025-02-01},
+                    {_id:2,product:"Mouse",price:500,quantity:2,date:2025-02-13},
+                    {_id:3,product:"Keyboard",price:600,quantity:1,date:2025-02-08}])
+
+db.sales.find()
+
+** Total Sales for Each Product **
+
+db.sales.aggregate([
+  {
+    $group: {
+      _id: "$product",
+      totalsales: {
+        $sum: {
+          $multiply: [
+            { $toDouble: "$price" },
+            { $toDouble: "$quantity" }
+          ]
+        }
+      }
+    }
+  },
+  {
+    $project: {
+      product: "$_id",
+      totalsales: 1,
+      _id: 0
+    }
+  }
+])
+
+** Filter Sales Above a Certain Value **
+
+db.sales.aggregate([
+    {
+        $group:{
+            _id:"$product",
+            totalsales:{ $sum: { $multiply: ["$price", "$quantity"] } }
+        }
+    },
+    {
+        $match:{
+            totalsales: { $gt:5000 }
+        }
+    },
+    {
+        $project:{
+            product: "$_id",
+            totalsales: 1,
+            _id: 0
+        }
+    }
+])
+
+
