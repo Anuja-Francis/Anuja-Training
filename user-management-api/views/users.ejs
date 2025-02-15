@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+    <h1>Users</h1>
+    <!-- <a href="/api/users/create">Create a New User</a> -->
+    <a href="/api/users/create" class="create-user-btn">Create a New User</a>
+
+    <!-- <ul>
+      <% users.forEach(user => { %>
+          <li>
+              <strong><%= user.name %></strong> (<%= user.email %>) - Age: <%= user.age %>
+              
+             
+              <a href="/api/users/<%= user._id %>">View</a> |
+              <a href="/api/users/update/<%= user._id %>">Edit</a> |
+              <a href="/api/users/delete/<%= user._id %>">Delete</a>
+          </li>
+      <% }) %>
+  </ul> -->
+  <table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Actions</th>
+    </tr>
+    <% users.forEach(user => { %>
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.age %></td>
+            <td>
+                <a href="/api/users/<%= user._id %>">View</a> 
+                <a href="/api/users/update/<%= user._id %>">Edit</a> 
+                <a href="/api/users/delete/<%= user._id %>">Delete</a>
+            </td>
+        </tr>
+    <% }) %>
+</table>
+
+</body>
+</html>
